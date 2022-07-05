@@ -2,13 +2,6 @@
 
 import Foundation
 
-//: [Next](@next)
-class Node {
-    var value: Int?
-    var left: Node?
-    var right: Node?
-}
-
 //Rules to invert the tree
 //1. Left node of the original node becomes the root node
 //2. Root node becomes left node of the right node of the new root node

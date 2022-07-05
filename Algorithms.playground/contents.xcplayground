@@ -6,5 +6,6 @@
         <page name='CyclicRotation'/>
         <page name='OddOccurancesInArray'/>
         <page name='InvertBinaryTree'/>
+        <page name='CheckTreeSymmetry'/>
     </pages>
 </playground>
