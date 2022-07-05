@@ -41,4 +41,17 @@ struct Solution {
         
         return previousNode
     }
+    
+    static func invertBinaryTreeWithRecursion(_ root: Node?) -> Node? {
+        guard root != nil, root?.left != nil, root?.right != nil else { return root }
+        
+        let newRoot = invertBinaryTreeWithRecursion(root?.left)
+        root?.left?.left = root?.right
+        root?.left?.right = root
+        
+        root?.left = nil
+        root?.right = nil
+        
+        return newRoot
+    }
 }
