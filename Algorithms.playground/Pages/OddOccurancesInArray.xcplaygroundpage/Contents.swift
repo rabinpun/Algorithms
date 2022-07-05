@@ -25,7 +25,7 @@ import XCTest
 
 class SolutionTests: XCTestCase {
 
-    func test_Binary_Gap() {
+    func test_Odd_Occurances() {
           XCTAssert(Solution.solution([1,2,3,4,5,6,7,7,6,5,4,3,2]) == 1)
           XCTAssert(Solution.solution([1,1,2,3,4,5,6,7,7,5,4,3,2]) == 6)
           XCTAssert(Solution.solution([1,2,3,4,1,6,7,7,6,5,4,3,2]) == 5)

@@ -27,7 +27,7 @@ import XCTest
 
 class SolutionTests: XCTestCase {
     
-    func test_Binary_Gap() {
+    func test_Disappearing_Pairs() {
         XCTAssert(Solution.solution("ABBCCD") == "AD")
         XCTAssert(Solution.solution("ACCAABBC") == "AC")
         XCTAssert(Solution.solution("ABCBBCBA") == "")

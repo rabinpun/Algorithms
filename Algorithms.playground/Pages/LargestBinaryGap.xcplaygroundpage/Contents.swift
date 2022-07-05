@@ -28,7 +28,7 @@ struct Solution {
 import XCTest
 class SolutionTests: XCTestCase {
     
-    func testBinaryGap() {
+    func test_Binary_Gap() {
         XCTAssert(Solution.binaryGap(1041) == 5)
         XCTAssert(Solution.binaryGap(15) == 0)
         XCTAssert(Solution.binaryGap(32) == 0)
