@@ -2,6 +2,38 @@
 
 import Foundation
 
-var greeting = "Hello, playground"
+//MARK: Solution
+struct Solution {
+    
+    static func solution(_ S: String) -> String {
+        guard S.count > 1 else { return S }
+        var solution = ""
+        for (_, char) in S.enumerated() {
+            if !solution.isEmpty, solution[solution.index(solution.endIndex, offsetBy: -1)] == char {
+                solution.remove(at: solution.index(solution.endIndex, offsetBy: -1))
+            } else {
+                solution.append(char)
+            }
+        }
+        return solution
+    }
+    
+}
 
-//: [Next](@next)
+
+//MARK: Unit tests
+
+import XCTest
+
+class SolutionTests: XCTestCase {
+    
+    func test_Binary_Gap() {
+        XCTAssert(Solution.solution("ABBCCD") == "AD")
+        XCTAssert(Solution.solution("ACCAABBC") == "AC")
+        XCTAssert(Solution.solution("ABCBBCBA") == "")
+        XCTAssert(Solution.solution("ABCBBCBA") != "A")
+        XCTAssert(Solution.solution("BABABA") == "BABABA")
+    }
+}
+
+SolutionTests.defaultTestSuite.run()
