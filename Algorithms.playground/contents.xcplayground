@@ -4,5 +4,7 @@
         <page name='LargestBinaryGap'/>
         <page name='DisAppearingPairs'/>
         <page name='CyclicRotation'/>
+        <page name='OddOccurancesInArray'/>
+        <page name='InvertBinaryTree'/>
     </pages>
 </playground>
