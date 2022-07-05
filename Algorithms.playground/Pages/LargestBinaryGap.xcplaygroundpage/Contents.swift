@@ -12,7 +12,7 @@ struct Solution {
         for (i, char) in binaryRep.enumerated() where char == "1" {
             bitIndices.append(i)
         }
-        
+        guard bitIndices.count > 1 else { return 0}
         for i in 0...bitIndices.count - 2 {
             let gap = bitIndices[i+1] - bitIndices[i] - 1
             largestGap = max(gap,largestGap)
@@ -36,4 +36,4 @@ class SolutionTests: XCTestCase {
     }
 }
 
-SolutionTests().run()
+SolutionTests.defaultTestSuite.run()
