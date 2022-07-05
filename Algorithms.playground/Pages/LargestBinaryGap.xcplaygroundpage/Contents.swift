@@ -2,7 +2,7 @@ import Foundation
 
 
 //MARK: Solution
-private struct Solution {
+struct Solution {
     
     static func binaryGap(_ N: Int) -> Int {
         let binaryRep = String(N, radix: 2)
