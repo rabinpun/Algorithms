@@ -3,5 +3,6 @@
     <pages>
         <page name='LargestBinaryGap'/>
         <page name='DisAppearingPairs'/>
+        <page name='CyclicRotation'/>
     </pages>
 </playground>
