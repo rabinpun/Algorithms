@@ -9,5 +9,6 @@
         <page name='CheckTreeSymmetry'/>
         <page name='ValidParenthesis'/>
         <page name='GasStation'/>
+        <page name='LargestRectangleInHistogram'/>
     </pages>
 </playground>
