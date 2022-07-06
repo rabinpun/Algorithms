@@ -8,5 +8,6 @@
         <page name='InvertBinaryTree'/>
         <page name='CheckTreeSymmetry'/>
         <page name='ValidParenthesis'/>
+        <page name='GasStation'/>
     </pages>
 </playground>
