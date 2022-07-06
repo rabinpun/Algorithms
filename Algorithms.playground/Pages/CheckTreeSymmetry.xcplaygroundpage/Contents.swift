@@ -20,4 +20,32 @@ struct Solution {
         }
     }
     
+    static func isSymmetricWithOutRecursion(_ root: Node) -> Bool {
+        
+        var nodeStack = [Node]()
+        
+        nodeStack.append(root)
+        nodeStack.append(root)
+        
+        while !nodeStack.isEmpty {
+            let rightNode = nodeStack.removeLast()
+            let leftNode = nodeStack.removeLast()
+            
+            if leftNode.left?.value != rightNode.right?.value || leftNode.right?.value != rightNode.left?.value {
+                return false
+            } else  {
+                if leftNode.left != nil {
+                    nodeStack.append(leftNode.left!)
+                    nodeStack.append(rightNode.right!)
+                }
+                if leftNode.right != nil {
+                    nodeStack.append(leftNode.right!)
+                    nodeStack.append(leftNode.left!)
+                }
+            }
+        }
+        return true
+        
+    }
+    
 }
