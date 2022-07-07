@@ -10,5 +10,6 @@
         <page name='ValidParenthesis'/>
         <page name='GasStation'/>
         <page name='LargestRectangleInHistogram'/>
+        <page name='DepthOfWater'/>
     </pages>
 </playground>
