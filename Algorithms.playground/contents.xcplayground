@@ -11,5 +11,7 @@
         <page name='GasStation'/>
         <page name='LargestRectangleInHistogram'/>
         <page name='DepthOfWater'/>
+        <page name='KthPermutation'/>
+        <page name='BestBlockForResources'/>
     </pages>
 </playground>
