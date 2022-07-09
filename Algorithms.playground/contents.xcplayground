@@ -14,5 +14,7 @@
         <page name='KthPermutation'/>
         <page name='BestBlockForResources'/>
         <page name='SideViewOfBinaryTree'/>
+        <page name='RemoveIlands'/>
+        <page name='BinaryTreeBasics'/>
     </pages>
 </playground>

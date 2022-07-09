@@ -1,6 +1,6 @@
 import Foundation
 
-extension Array {
+public extension Array {
     
     mutating func enqueue(_ element: Element) {
         append(element)

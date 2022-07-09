@@ -79,7 +79,6 @@ struct Solution {
                         || edgeBits.contains(where: { $0.row == leftBlock.row && $0.column == leftBlock.column })
                         || edgeBits.contains(where: { $0.row == bottomBlock.row && $0.column == bottomBlock.column }) {
                         edgeBits.append(currentBlock)
-                        debugPrint(currentBlock)
                     }
                 }
             }
@@ -103,9 +102,8 @@ struct Solution {
                 rowString.append("| \(matrix[row][col]) |")
             }
             print(rowString)
-            print(String(repeating: "_", count: matrix.first?.count ?? 0))
         }
-        
+        print("\n")
     }
     
 }
@@ -118,15 +116,24 @@ let matrix = [
                 [1,0,1,1,0,0],
                 [1,0,0,0,0,1]
              ]
-Solution.printMatrix(matrix)
-Solution.printMatrix(Solution.solution(matrix))
+
 
 import XCTest
 
 class SolutionTests: XCTestCase {
 
     func test() {
-       
+        Solution.printMatrix(matrix)
+        XCTAssert(Solution.solution(matrix) == [
+            [1,0,0,0,0,0],
+            [0,0,0,1,1,1],
+            [0,0,0,0,1,0],
+            [1,1,0,0,1,0],
+            [1,0,0,0,0,0],
+            [1,0,0,0,0,1]
+        ])
+        
+        Solution.printMatrix(Solution.solution(matrix))
     }
 }
 
