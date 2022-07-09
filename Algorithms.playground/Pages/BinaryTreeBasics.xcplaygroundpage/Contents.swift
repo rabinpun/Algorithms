@@ -46,14 +46,14 @@ class Solution {
     func treeIncludes(_ root: Node?, value: Int) -> Bool {
         guard root != nil else { return false }
         var queue = [Node]()
-        var visitedNodes = [Int]()
         
         queue.enqueue(root!)
         
         while !queue.isEmpty {
             let currentNode = queue.dequeue()!
-            visitedNodes.append(currentNode.value!)
-            
+            if currentNode.value == value {
+                return true
+            }
             if let leftNode = currentNode.left {
                 queue.enqueue(leftNode)
             }
@@ -61,7 +61,7 @@ class Solution {
                 queue.enqueue(rightNode)
             }
         }
-        return visitedNodes.contains(value)
+        return false
     }
     
     func treeIncludesSide(_ root: Node?, value: Int) -> String {
@@ -97,6 +97,35 @@ class Solution {
         }
         return "Doesnt contain node with \(value) value"
     }
+    
+//    var maxLeafToNodeSum = 0
+//    var currentSum =
+    
+    func maxRootToLeafPathSum(_ root: Node?) -> Int {
+        guard root != nil else { return 0 }
+        var stack = [(Node,Int)]()
+        stack.push((root!,0))
+        
+        var sums = [Int]()
+        var currentSum = 0
+        
+        while !stack.isEmpty {
+            let currentNode = stack.pop()!
+            
+            currentSum = currentNode.0.value! + currentNode.1
+            
+            if let rightNode = currentNode.0.right {
+                stack.push((rightNode,currentSum))
+            }
+            if let leftNode = currentNode.0.left {
+                stack.push((leftNode,currentSum))
+            } else {
+                sums.append(currentSum)
+                currentSum -= currentNode.0.value!
+            }
+        }
+        return sums.max()!
+    }
 
 }
 
@@ -112,12 +141,15 @@ class SolutionTests: XCTestCase {
         XCTAssertEqual(Solution().treeIncludes(Node.getRootNode(), value: 3), true)
         XCTAssertEqual(Solution().treeIncludes(Node.getRootNode(), value: 9), false)
         XCTAssertEqual(Solution().treeIncludes(Node.getRootNode(), value: 0), false)
-        
+
         XCTAssertEqual(Solution().treeIncludesSide(Node.getRootNode(), value: 7), "Right")
         XCTAssertEqual(Solution().treeIncludesSide(Node.getRootNode(), value: 5), "Left")
         XCTAssertEqual(Solution().treeIncludesSide(Node.getRootNode(), value: 3), "Right")
         XCTAssertEqual(Solution().treeIncludesSide(Node.getRootNode(), value: 9), "Doesnt contain node with 9 value")
         XCTAssertEqual(Solution().treeIncludesSide(Node.getRootNode(), value: 0), "Doesnt contain node with 0 value")
+        
+        XCTAssertEqual(Solution().maxRootToLeafPathSum(Node.getRootNodeTwo()), 17)
+        XCTAssertEqual(Solution().maxRootToLeafPathSum(Node.getRootNode()), 11)
     }
 }
 
@@ -125,3 +157,4 @@ SolutionTests.defaultTestSuite.run()
 //     1
 //  2     3
 //4  5   6  7
+//  8  9
