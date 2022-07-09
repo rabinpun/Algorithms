@@ -9,4 +9,15 @@ public class Node {
     public init(_ value: Int?) {
         self.value = value
     }
+    
+    public static func getRootNode() -> Node {
+        let rootNode = Node(1)
+        rootNode.left = Node(2)
+        rootNode.right = Node(3)
+        rootNode.left?.left = Node(4)
+        rootNode.left?.right = Node(5)
+        rootNode.right?.left = Node(6)
+        rootNode.right?.right = Node(7)
+        return rootNode
+    }
 }
