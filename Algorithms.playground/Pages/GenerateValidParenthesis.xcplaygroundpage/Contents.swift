@@ -12,16 +12,16 @@ struct Solution {
 
     func balancedBracket(_ solution: inout [String],_ result: String, _ size: Int, _ openParenthesisCount: Int, _ closedParenthesisCount: Int)
         {
-            if (close == size)
+            if (closedParenthesisCount == size)
             {
                 solution.append(result)
                 return
             }
-            if (open < size)
+            if (openParenthesisCount < size)
             {
                 self.balancedBracket(&solution, result + "(", size, openParenthesisCount + 1, closedParenthesisCount)
             }
-            if (open > close)
+            if (openParenthesisCount > closedParenthesisCount)
             {
                 self.balancedBracket(&solution, result + ")", size, openParenthesisCount, closedParenthesisCount + 1);
             }
