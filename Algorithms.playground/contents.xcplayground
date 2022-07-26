@@ -16,5 +16,10 @@
         <page name='SideViewOfBinaryTree'/>
         <page name='RemoveIlands'/>
         <page name='BinaryTreeBasics'/>
+        <page name='GraphBasics'/>
+        <page name='GridTravellerMemoization'/>
+        <page name='SumAlgorithms'/>
+        <page name='CanConstruct'/>
+        <page name='GenerateValidParenthesis'/>
     </pages>
 </playground>
